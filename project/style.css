@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .container {
+    padding: 50px;
+  }
+  
+  .foto-profil {
+    width: 200px;
+    border-radius: 50%;
+    border: 3px solid #555;
+  }
