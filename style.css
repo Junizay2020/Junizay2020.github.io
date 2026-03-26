@@ -10,83 +10,75 @@ body {
   color: #fff;
   line-height: 1.7;
 }
-/* ===== NAVBAR DESKTOP ===== */
-.navbar {
-  width: 100%;
-  padding: 20px 40px;
+/* NAVBAR WRAPPER */
+#navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
   background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 15px 25px;
+  z-index: 999;
+  border-bottom: 1px solid #ddd;
 }
 
-.logo {
-  font-size: 22px;
+/* LOGO */
+#navbar .logo {
   font-weight: bold;
+  font-size: 20px;
 }
 
-/* Navbar links */
-.nav-links {
+/* NAV LINKS MAIN */
+#navbar nav {
   display: flex;
-  list-style: none;
-  gap: 30px;
+  gap: 20px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: #555;
-}
-
-/* ===== HAMBURGER MENU ===== */
+/* MOBILE HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
+  gap: 4px;
   cursor: pointer;
-  gap: 5px;
 }
 
 .hamburger span {
-  width: 28px;
+  width: 25px;
   height: 3px;
   background: black;
-  border-radius: 3px;
-  transition: 0.3s;
+  border-radius: 2px;
 }
 
-/* ===== MOBILE MODE ===== */
+/* MOBILE MENU */
+#nav-menu {
+  transition: all 0.3s ease;
+}
+
+/* ============ MOBILE STYLE ============ */
 @media (max-width: 768px) {
+
+  /* HIDE NAV DESKTOP */
+  #navbar nav {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      text-align: center;
+      padding: 15px 0;
+      display: none;
+      border-bottom: 1px solid #eee;
+  }
+
+  #navbar nav.show {
+      display: flex;
+  }
+
   .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    background: white;
-    height: 100vh;
-    width: 60%;
-    flex-direction: column;
-    padding-top: 120px;
-    gap: 25px;
-    align-items: center;
-    transition: 0.3s ease-in-out;
-    box-shadow: -5px 0 10px rgba(0,0,0,0.1);
-  }
-
-  .nav-links.active {
-    right: 0;
+      display: flex;
   }
 }
 /* NAVBAR */

@@ -17,13 +17,10 @@ document.querySelectorAll("nav a").forEach(anchor => {
     });
 });
 
-// MOBILE NAV MENU
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-
-  // Animasi hamburger
-  hamburger.classList.toggle("open");
-});
+function closeMenu() {
+    document.getElementById("nav-menu").classList.remove("show");
+}
