@@ -7,102 +7,33 @@
 
 body {
   background: #0b0e14;
-  color: black;
-  line-height: 1.7;
-}
-/* NAVBAR WRAPPER */
-#navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
-  z-index: 999;
-  border-bottom: 1px solid #ddd;
+  color: #fff;
 }
 
-/* LOGO */
-#navbar .logo {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-/* NAV LINKS MAIN */
-#navbar nav {
-  display: flex;
-  gap: 20px;
-}
-
-/* MOBILE HAMBURGER */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: black;
-  border-radius: 2px;
-}
-
-/* MOBILE MENU */
-#nav-menu {
-  transition: all 0.3s ease;
-}
-
-/* ============ MOBILE STYLE ============ */
-@media (max-width: 768px) {
-
-  /* HIDE NAV DESKTOP */
-  #navbar nav {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: black;
-      flex-direction: column;
-      text-align: center;
-      padding: 15px 0;
-      display: none;
-      border-bottom: 1px solid #eee;
-  }
-
-  #navbar nav.show {
-      display: flex;
-  }
-
-  .hamburger {
-      display: flex;
-  }
-}
 /* NAVBAR */
 header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   padding: 20px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
   transition: 0.3s;
 }
 
 header.scrolled {
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
   padding: 12px 60px;
 }
 
 header .logo {
   font-size: 22px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 header nav a {
@@ -116,7 +47,7 @@ header nav a:hover {
   color: #0af;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   height: 100vh;
   padding: 0 60px;
@@ -127,89 +58,51 @@ header nav a:hover {
 
 .hero-content {
   max-width: 50%;
-  animation: fadeIn 1s;
+  animation: fadeIn 1.2s;
 }
 
-.hero-content h3 { font-size: 26px; }
-.hero-content h1 { font-size: 52px; color: #0af; }
-.hero-content h2 { font-size: 32px; margin-bottom: 12px; }
-
-.hero-desc {
+.hero-content h3 {
+  font-size: 26px;
   opacity: 0.8;
-  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  margin-top: 5px;
+  color: #0af;
+}
+
+.hero-content h2 {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.social-links {
+  margin-top: 25px;
 }
 
 .social-links a {
-  margin-right: 15px;
-  padding: 8px 16px;
-  border: 1px solid #0af;
-  border-radius: 20px;
+  display: inline-block;
+  margin-right: 20px;
   color: #fff;
   text-decoration: none;
+  border: 1px solid #0af;
+  padding: 8px 16px;
+  border-radius: 20px;
   transition: 0.3s;
 }
 
-.social-links a:hover {
+social-links a:hover {
   background: #0af;
   color: #000;
 }
 
+/* HERO IMAGE */
 .hero-image img {
   width: 380px;
   border-radius: 20px;
-  animation: slideUp 1.2s;
+  animation: slideUp 1.3s;
 }
-
-/* ABOUT */
-.about, .skills, .contact {
-  padding: 100px 60px;
-}
-
-.about h1, .skills h1, .contact h1 {
-  font-size: 38px;
-  margin-bottom: 30px;
-  color: #0af;
-}
-
-.about-details {
-  margin-top: 25px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-/* SKILLS */
-.skills-container {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-
-.skill-card {
-  background: #111722;
-  padding: 25px;
-  border-radius: 16px;
-  border: 1px solid #1f2a3a;
-  transition: 0.3s;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  border-color: #0af;
-}
-
-.skill-card h3 {
-  color: #0af;
-  margin-bottom: 12px;
-}
-
-/* CONTACT */
-.contact-info {
-  margin-bottom: 30px;
-}
-
-
 
 /* ANIMATIONS */
 @keyframes fadeIn {
@@ -218,6 +111,6 @@ header nav a:hover {
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(50px); }
   to { opacity: 1; transform: translateY(0); }
 }
