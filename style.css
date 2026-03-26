@@ -139,28 +139,7 @@ header nav a:hover {
   margin-bottom: 30px;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 450px;
-}
 
-.contact-form input,
-.contact-form textarea {
-  margin-bottom: 12px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-}
-
-.contact-form button {
-  padding: 12px;
-  border-radius: 8px;
-  background: #0af;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
 
 /* ANIMATIONS */
 @keyframes fadeIn {
