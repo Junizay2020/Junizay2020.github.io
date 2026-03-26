@@ -7,6 +7,11 @@ window.addEventListener("scroll", () => {
         nav.classList.remove("scrolled");
     }
 });
+// Navbar scroll effect
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+});
 
 // SMOOTH SCROLL
 document.querySelectorAll("nav a").forEach(anchor => {
@@ -19,6 +24,7 @@ document.querySelectorAll("nav a").forEach(anchor => {
 
 function toggleMenu() {
     document.getElementById("nav-menu").classList.toggle("show");
+    document.querySelector(".hamburger").classList.toggle("active");
 }
 
 function closeMenu() {
