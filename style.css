@@ -7,7 +7,7 @@
 
 body {
   background: #0b0e14;
-  color: #fff;
+  color: black;
   line-height: 1.7;
 }
 /* NAVBAR WRAPPER */
@@ -15,7 +15,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: white;
+  background: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +65,7 @@ body {
       top: 60px;
       left: 0;
       width: 100%;
-      background: white;
+      background: black;
       flex-direction: column;
       text-align: center;
       padding: 15px 0;
