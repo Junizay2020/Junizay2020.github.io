@@ -16,3 +16,14 @@ document.querySelectorAll("nav a").forEach(anchor => {
             .scrollIntoView({ behavior: "smooth" });
     });
 });
+
+// MOBILE NAV MENU
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+
+  // Animasi hamburger
+  hamburger.classList.toggle("open");
+});
