@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +10,12 @@ body {
   background: #0b0e14;
   color: #fff;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* ======================
+      NAVBAR
+=======================*/
 header {
   position: fixed;
   top: 0;
@@ -21,38 +25,64 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  transition: 0.3s;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
 }
 
 header.scrolled {
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
   padding: 12px 60px;
+  background: rgba(0,0,0,0.9);
 }
 
 header .logo {
   font-size: 22px;
   font-weight: bold;
+  color: #fff;
+}
+
+/* NAV MENU DESKTOP */
+header nav {
+  display: flex;
+  gap: 25px;
 }
 
 header nav a {
-  margin-left: 25px;
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-header nav a:hover {
+header nav a:hover,
+.nav-link.active {
   color: #0af;
 }
 
-/* HERO */
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ======================
+      HERO
+=======================*/
 .hero {
   height: 100vh;
-  padding: 0 60px;
+  padding: 120px 60px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .hero-content {
@@ -90,7 +120,9 @@ header nav a:hover {
   animation: slideUp 1.2s;
 }
 
-/* ABOUT */
+/* ======================
+      ABOUT, SKILLS, CONTACT
+=======================*/
 .about, .skills, .contact {
   padding: 100px 60px;
 }
@@ -108,7 +140,7 @@ header nav a:hover {
   gap: 15px;
 }
 
-/* SKILLS */
+/* SKILLS GRID */
 .skills-container {
   margin-top: 30px;
   display: grid;
@@ -139,29 +171,6 @@ header nav a:hover {
   margin-bottom: 30px;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 450px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  margin-bottom: 12px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-}
-
-.contact-form button {
-  padding: 12px;
-  border-radius: 8px;
-  background: #0af;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
 /* ANIMATIONS */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -173,27 +182,85 @@ header nav a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header default */
-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: transparent;
-  padding: 25px 0;
-  transition: 0.3s ease;
-  z-index: 1000;
+/* ======================
+   RESPONSIVE MODE
+=======================*/
+
+/* TABLET */
+@media (max-width: 992px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    width: 260px;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Header ketika scroll */
-header.scrolled {
-  background: #ffffff;
-  padding: 12px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+/* MOBILE */
+@media (max-width: 768px) {
 
-/* Active link ketika scrollspy */
-.nav-link.active {
-  color: #00bfa6;
-  font-weight: 600;
+  /* Hamburger muncul */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav desktop & buat mobile menu */
+  header nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0b0e14;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #1f2a3a;
+  }
+
+  header nav.show {
+    display: flex;
+  }
+
+  header nav a {
+    padding: 10px 0;
+    margin-left: 0;
+  }
+
+  /* HERO mobile */
+  .hero {
+    padding: 140px 20px 40px;
+  }
+
+  .hero-content h1 { font-size: 36px; }
+  .hero-content h2 { font-size: 22px; }
+  .hero-content h3 { font-size: 18px; }
+
+  .hero-image img {
+    width: 220px;
+  }
+
+  /* ABOUT / SKILLS / CONTACT mobile */
+  .about, .skills, .contact {
+    padding: 80px 20px;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
 }
