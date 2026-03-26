@@ -172,3 +172,28 @@ header nav a:hover {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Header default */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  padding: 25px 0;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+/* Header ketika scroll */
+header.scrolled {
+  background: #ffffff;
+  padding: 12px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Active link ketika scrollspy */
+.nav-link.active {
+  color: #00bfa6;
+  font-weight: 600;
+}
