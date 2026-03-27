@@ -140,46 +140,39 @@ header nav a:hover,
   gap: 15px;
 }
 
-/* EXPERIENCES GRID */
-.experiences-container {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
-}
+/* ======================
+      TIMELINE WITHOUT CARD
+========================*/
 
+/* Garis timeline kiri */
 .experience-card {
-  background: #111722;
-  padding: 25px 25px 25px 40px;
-  border-radius: 16px;
-  border: 1px solid #1f2a3a;
-  transition: 0.3s;
   position: relative;
-  padding-left: 40px;
+  padding-left: 40px;   /* Ruang untuk garis dan dot */
   border-left: 2px solid #0af;
+  margin-bottom: 40px;
+  background: none;   /* Hapus kotak */
+  border: none;       /* Hapus border kotak */
 }
 
-.experience-card:hover {
-  transform: translateY(-6px);
-  border-color: #0af;
-}
-
+/* Setiap Judul Experience */
 .experience-card h3 {
-  color: #0af;
   position: relative;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin-top: 35px;
+  margin-bottom: 8px;
   padding-left: 10px;
+  color: #0af;
+
+  /* animasi */
   opacity: 0;
   transform: translateX(-20px);
   animation: slideIn 0.8s forwards;
 }
 
-/* DOT VISUAL */
+/* Dot bullet */
 .experience-card h3::before {
   content: "";
   position: absolute;
-  left: -32px;
+  left: -33px; 
   top: 7px;
   width: 14px;
   height: 14px;
@@ -188,59 +181,47 @@ header nav a:hover,
   border: 3px solid #0b0e14;
 }
 
-/* ANIMASI URUTAN */
-.experience-card h3:nth-of-type(1) { animation-delay: 0.1s; }
-.experience-card h3:nth-of-type(2) { animation-delay: 0.4s; }
-.experience-card h3:nth-of-type(3) { animation-delay: 0.7s; }
-
-/* Jika ada lebih banyak H3, tinggal lanjut angka delay-nya */
-
-/* KEYFRAME ANIMATION */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* MOBILE FRIENDLY */
-@media(max-width: 768px) {
-  .experience-card {
-    padding-left: 25px;
-  }
-
-  .experience-card h3::before {
-    left: -24px;
-    width: 10px;
-    height: 10px;
-  }
-}
-
+/* Paragraf di bawah tiap H3 */
 .experience-card p {
+  margin-bottom: 10px;
+
+  /* animasi */
   opacity: 0;
   transform: translateY(10px);
   animation: fadeUp 0.7s forwards;
 }
 
-.experience-card p:nth-of-type(1) { animation-delay: 0.3s; }
-.experience-card p:nth-of-type(2) { animation-delay: 0.5s; }
-.experience-card p:nth-of-type(3) { animation-delay: 0.7s; }
+/* Animasi: berurutan */
+.experience-card h3:nth-of-type(1) { animation-delay: 0.1s; }
+.experience-card h3:nth-of-type(2) { animation-delay: 0.3s; }
+.experience-card h3:nth-of-type(3) { animation-delay: 0.5s; }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.experience-card p:nth-of-type(1) { animation-delay: 0.25s; }
+.experience-card p:nth-of-type(2) { animation-delay: 0.45s; }
+.experience-card p:nth-of-type(3) { animation-delay: 0.65s; }
+
+/* Keyframes */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .experience-card {
+    padding-left: 25px;
+  }
+  .experience-card h3::before {
+    left: -25px;
+    width: 10px;
+    height: 10px;
+  }
+}
 /* SKILLS GRID */
 .skills-container {
   margin-top: 30px;
