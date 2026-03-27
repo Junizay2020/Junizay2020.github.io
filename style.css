@@ -144,13 +144,13 @@ header nav a:hover,
 .experiences-container {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 25px;
 }
 
 .experience-card {
   background: #111722;
-  padding: 25px;
+  padding: 25px 25px 25px 40px;
   border-radius: 16px;
   border: 1px solid #1f2a3a;
   transition: 0.3s;
@@ -160,7 +160,7 @@ header nav a:hover,
 }
 
 .experience-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: #0af;
 }
 
