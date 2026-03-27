@@ -140,6 +140,20 @@ header nav a:hover,
   gap: 15px;
 }
 
+.about p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.about ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-info p {
+    margin: 5px 0;
+}
+
 /* ======================
       TIMELINE WITHOUT CARD
 ========================*/
