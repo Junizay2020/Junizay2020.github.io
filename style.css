@@ -220,6 +220,27 @@ header nav a:hover,
   }
 }
 
+.experience-card p {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.7s forwards;
+}
+
+.experience-card p:nth-of-type(1) { animation-delay: 0.3s; }
+.experience-card p:nth-of-type(2) { animation-delay: 0.5s; }
+.experience-card p:nth-of-type(3) { animation-delay: 0.7s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* SKILLS GRID */
 .skills-container {
   margin-top: 30px;
