@@ -154,6 +154,9 @@ header nav a:hover,
   border-radius: 16px;
   border: 1px solid #1f2a3a;
   transition: 0.3s;
+  position: relative;
+  padding-left: 40px;
+  border-left: 2px solid #0af;
 }
 
 .experience-card:hover {
@@ -163,7 +166,58 @@ header nav a:hover,
 
 .experience-card h3 {
   color: #0af;
-  margin-bottom: 12px;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.8s forwards;
+}
+
+/* DOT VISUAL */
+.experience-card h3::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  background: #0af;
+  border-radius: 50%;
+  border: 3px solid #0b0e14;
+}
+
+/* ANIMASI URUTAN */
+.experience-card h3:nth-of-type(1) { animation-delay: 0.1s; }
+.experience-card h3:nth-of-type(2) { animation-delay: 0.4s; }
+.experience-card h3:nth-of-type(3) { animation-delay: 0.7s; }
+
+/* Jika ada lebih banyak H3, tinggal lanjut angka delay-nya */
+
+/* KEYFRAME ANIMATION */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* MOBILE FRIENDLY */
+@media(max-width: 768px) {
+  .experience-card {
+    padding-left: 25px;
+  }
+
+  .experience-card h3::before {
+    left: -24px;
+    width: 10px;
+    height: 10px;
+  }
 }
 
 /* SKILLS GRID */
