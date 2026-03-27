@@ -121,13 +121,13 @@ header nav a:hover,
 }
 
 /* ======================
-      ABOUT, SKILLS, CONTACT
+      ABOUT, EXPERIENCES, SKILLS, CONTACT
 =======================*/
-.about, .skills, .contact {
+.about, .experiences, .skills, .contact {
   padding: 100px 60px;
 }
 
-.about h1, .skills h1, .contact h1 {
+.about h1, .experiences h1, .skills h1, .contact h1 {
   font-size: 38px;
   margin-bottom: 30px;
   color: #0af;
@@ -138,6 +138,32 @@ header nav a:hover,
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+}
+
+/* EXPERIENCES GRID */
+.experiences-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.experience-card {
+  background: #111722;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #1f2a3a;
+  transition: 0.3s;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  border-color: #0af;
+}
+
+.experience-card h3 {
+  color: #0af;
+  margin-bottom: 12px;
 }
 
 /* SKILLS GRID */
@@ -251,8 +277,8 @@ header nav a:hover,
     width: 220px;
   }
 
-  /* ABOUT / SKILLS / CONTACT mobile */
-  .about, .skills, .contact {
+  /* ABOUT / EXPERIENCES / SKILLS / CONTACT mobile */
+  .about, .experiences, .skills, .contact {
     padding: 80px 20px;
   }
 
@@ -261,6 +287,9 @@ header nav a:hover,
   }
 
   .skills-container {
+    grid-template-columns: 1fr;
+  }
+  .experiences-container {
     grid-template-columns: 1fr;
   }
 }
